@@ -1,0 +1,28 @@
+.table{
+    .productwrapper{
+        display: flex;
+        align-items: center;
+
+        .image{
+            width: 32px;
+            height: 32px;
+            border-radius: 10%;
+            padding-right: 5%;
+            //object-fit:fill;
+        };
+
+    }
+    .status{
+        padding: 10px;
+        border-radius: 5px;            
+        
+        &.Approved{
+            color: green;
+            background-color: rgba(142, 177, 142, 0.269);
+        }
+        &.Pending{
+            color: red;
+            background-color: rgba(152, 107, 107, 0.154);
+        }
+    }
+}

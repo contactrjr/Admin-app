@@ -1,0 +1,109 @@
+.data{
+    margin: 20px;
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+     border-radius: 1%;
+   
+     .title{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 24px;
+        font-weight: bold;
+        color: gray;
+        margin-bottom: 10px;
+        width: 100%;
+        .adduser{
+            //text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            color: green;
+            border: 1px solid green;
+            padding: 5px;
+            background-color: rgba(79, 160, 79, 0.303);
+            border-radius: 5%;
+            cursor: pointer;
+            
+        }
+     }
+
+}
+.username{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .userimage{
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        //padding: 10px;
+        margin-right: 20px;
+    }
+ }
+
+ .statuscell{
+    width: 70px;
+    height: 20px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+ .status{
+    font-size: 15px;
+    font-weight: normal;
+    //padding: 15%;
+    padding: 2px 5px;
+
+    &.active{
+        color: green;
+        background-color: rgba(71, 161, 71, 0.239);
+        border-radius: 10%;
+    }
+    &.pending{
+        color: red;
+        background-color: rgba(128, 69, 69, 0.249);
+        border-radius: 10%;
+    }
+    &.passive{
+        color: goldenrod;
+        background-color: rgba(148, 123, 59, 0.332);
+        border-radius: 10%;
+        font-weight: bold;
+    }
+ }
+}
+
+.action{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    gap: 10px;
+    //height: 10px;
+    //width: 250px;
+    
+    
+    justify-content: space-evenly;
+    //background-color: goldenrod;
+    .view{
+        border: 1px solid blue;
+        //padding: 10px;
+        padding: 2px 5px;
+        border-radius: 7%;
+        cursor: pointer;
+        height: 20px;
+    }
+    .edit{
+        border: 1px solid green;
+        padding: 2px 5px;
+        border-radius: 7%;
+        cursor: pointer;
+    }
+    .delete{
+        border: 1px solid red;
+        padding: 2px 5px;
+        border-radius: 7%;
+        cursor: pointer;
+    }
+    
+}
