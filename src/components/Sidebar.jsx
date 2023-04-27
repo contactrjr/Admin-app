@@ -6,9 +6,19 @@ import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import SettingsSystemDaydreamIcon from '@mui/icons-material/SettingsSystemDaydream';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../context/Authcontext';
+import { useContext } from "react";
 //import "../img/admin-portal.png"
 
 const SideBar = () => {
+
+    const {dispatch} = useContext(AuthContext);
+    const handleLogout = () =>{
+        
+        dispatch({type:"LOGOUT"});
+        localStorage.setItem("user", null)
+    }
+
     return (
         <div className="sidebar">
             <div className="top">
@@ -48,7 +58,7 @@ const SideBar = () => {
                     <hr/>
                     <li>
                         <LogoutIcon className="icons"/>
-                        <span>Logout</span>
+                        <span onClick={handleLogout}>Logout</span>
                     </li>
                 </ul>
 

@@ -8,7 +8,6 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const Feature = () =>{
 
-
     return(
         <div className='features'> 
             <div className="top">
