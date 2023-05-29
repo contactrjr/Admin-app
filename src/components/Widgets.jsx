@@ -6,17 +6,24 @@ import PersonIcon from '@mui/icons-material/Person';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import RedeemIcon from '@mui/icons-material/Redeem';
+import { useEffect, useState } from 'react';
+import { where, collection, getDocs, query } from "firebase/firestore";
+import {db} from "../../firebase";
 
 const Widgets = ({type}) =>{
     let data;
+    const  [val, SetVal] = useState(null);
+    const  [diff, setDiff] = useState(null);
+
     switch(type){
         case "user":
         data =  {
             title: "USER",
             link: "See more detail",
             isMoney: false,
-            val : 150,
-            valPercent: 25,
+            val : val,
+            valPercent: diff,
+            query: "users",
             isUp: true,
             icon : (<PersonIcon className='icon'
             style={{
@@ -69,6 +76,44 @@ const Widgets = ({type}) =>{
         default:
             break;
     }
+
+    useEffect( ()=>{
+        const executeQuery = async() =>{
+            const today = new Date();
+            const lastMonth = new Date(new Date().setMonth(today.getMonth() - 1));
+            const prevMonth = new Date(new Date().setMonth(today.getMonth() - 2));
+            console.log("date:",today);
+            console.log("lastmonth:",lastMonth, prevMonth);
+
+            const lastMonthQuery = query(
+                collection(db, "users"),
+                where("timeStamp", "<=", today),
+                where("timeStamp", ">", lastMonth)
+              );
+
+              const prevMonthQuery = query(
+                collection(db, "users"),
+                where("timeStamp", "<=", lastMonth),
+                where("timeStamp", ">", prevMonth)
+              );
+              const lastMonthData = await getDocs(lastMonthQuery);
+              const prevMonthData = await getDocs(prevMonthQuery);
+
+              SetVal(lastMonthData.docs.length);
+              console.log("diff:",lastMonthData.docs.length, prevMonthData.docs.length);
+
+              setDiff(
+                ((lastMonthData.docs.length - prevMonthData.docs.length) / prevMonthData.docs.length) *
+                  100
+              );
+
+
+        };
+
+        executeQuery();
+    }, []
+    )
+
     return(
         <div className="wigdet">
             <div className="left">

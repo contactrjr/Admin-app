@@ -86,58 +86,59 @@ export const userRows = [
 
 export const userInput = [
     {
-        id:1,
+        id:"Title",
         type:"text",
         lable: "Title",
         placeholder:"Enter Title",
     },
     {
-        id:2,
+        id:"FirstName",
         type:"text",
         lable: "First name",
         placeholder:"Enter first Name",
     },
     {
-        id:3,
+        id:"LastName",
         type:"text",
         lable: "Last Name",
         placeholder:"Enter last Name",
     },
     {
-        id:4,
+        id:"Email",
         type:"email",
         lable: "Email id",
         placeholder:"Email id",
     },
     {
-        id:5,
+        id:"Password",
         type:"password",
         lable:"Password",
         placeholder:"Enter password",
     },
     {
-        id:6,
+        id:"CPassword",
         type:"password",
         lable:"Confirm password",
         placeholder:"Confirm password",
     },
     {
-        id:7,
+        id:"Address",
         type:"text",
         lable:"Enter Address",
         placeholder:"Address",
     },
     {
-        id:8,
+        id:"Postcode",
         type:"text",
         lable:"Enter postcode",
         placeholder:"Post code",
     },
     {
-        id:9,
+        id:"Country",
         type:"text",
         lable:"Enter country",
         placeholder:"Country",
     },
+    
 ];
 

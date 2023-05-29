@@ -70,7 +70,15 @@
                     cursor: pointer;
                     margin-top:10px;
                     font-weight: bold;
+
+                    &:disabled{
+                        background-color: rgba(0, 128, 128, 0.274);
+                        cursor: not-allowed;
+
+                    }
                 }
+
+                
             }
         }
 
